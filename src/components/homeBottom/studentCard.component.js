@@ -23,8 +23,16 @@ export const StudentCard = ({ item }) => {
         </Text>
       </View>
       <View style={tw`basis-1/6 justify-start`}>
-        <View style={tw`m-2 h-3 w-3 bg-red-600 rounded-full`}></View>
-        <Text style={tw`text-left`}>Absent</Text>
+        <View
+          style={tw`m-2 h-3 w-3 ${
+            item.present ? "bg-green-600" : "bg-red-600"
+          } rounded-full`}
+        ></View>
+        {item.present ? (
+          <Text style={tw`text-left`}>Present</Text>
+        ) : (
+          <Text style={tw`text-left`}>Absent</Text>
+        )}
       </View>
     </View>
   );

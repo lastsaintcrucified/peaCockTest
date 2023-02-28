@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, ScrollView } from "react-native";
 import tw from "twrnc";
 import { FeeBottomNavigator } from "../../navigation/feeBottom.navigation";
 import { SelectItem } from "../../components/selectItem.component";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export const FeeScreen = () => {
   const navigation = useNavigation();
@@ -28,8 +29,20 @@ export const FeeScreen = () => {
   ];
   return (
     <View style={tw`bg-white flex-1`}>
-      <View style={tw`p-3`}>
-        <SelectItem list={genderList} />
+      <View style={tw`p-3  flex-row justify-around`}>
+        <SelectItem style={tw`p-3 `} list={genderList} w={80} />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("FeeFilter");
+          }}
+        >
+          <Ionicons
+            style={tw`mt-5`}
+            name="funnel-outline"
+            size={20}
+            color="#D78602"
+          />
+        </TouchableOpacity>
       </View>
       <View style={tw`flex flex-row`}>
         <TouchableOpacity

@@ -4,8 +4,9 @@ import DropDown from "react-native-paper-dropdown";
 import { TextInput } from "react-native-paper";
 import { DatePickerModal } from "react-native-paper-dates";
 
-export const SelectDate = () => {
+export const SelectDate = ({ setData }) => {
   const [date, setDate] = useState("");
+  const [dateTmp, setDateTmp] = useState("");
   const [open, setOpen] = useState(false);
 
   const onDismissSingle = useCallback(() => {
@@ -15,8 +16,10 @@ export const SelectDate = () => {
   const onConfirmSingle = useCallback(
     (params) => {
       console.log(params.date);
+      setData(params.date.toLocaleDateString("en-US"));
       setOpen(false);
       setDate(params.date.toLocaleDateString("en-US"));
+      setDateTmp(params.date);
     },
     [setOpen, setDate]
   );
@@ -31,11 +34,10 @@ export const SelectDate = () => {
           value={date}
         />
         <DatePickerModal
-          locale="en"
           mode="single"
           visible={open}
           onDismiss={onDismissSingle}
-          date={date}
+          date={dateTmp}
           onConfirm={onConfirmSingle}
         />
       </TouchableOpacity>

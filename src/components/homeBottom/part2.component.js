@@ -12,10 +12,12 @@ const data = [
     admission_id: "233",
     roll: "44",
     father: "Alex Doe",
+    present: true,
     image:
       "https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg",
   },
   {
+    present: false,
     name: "John Doe",
     id: 2,
     admission_id: "233",
@@ -25,6 +27,7 @@ const data = [
       "https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg",
   },
   {
+    present: true,
     id: 3,
     name: "John Doe",
     admission_id: "233",
@@ -34,6 +37,7 @@ const data = [
       "https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg",
   },
   {
+    present: false,
     id: 4,
     name: "John Doe",
     admission_id: "233",
