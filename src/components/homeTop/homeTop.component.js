@@ -12,24 +12,33 @@ import {
   getStd,
 } from "../../redux/slices/stdSlice";
 import tw from "twrnc";
+import { getData, seedData } from "../../services/handleDataCrud";
 
 export const HomeTop = () => {
   const classList = [
     {
-      label: "Class 1",
-      value: "clas1",
-    },
-    {
-      label: "Class 2",
-      value: "clas2",
-    },
-    {
-      label: "Class 3",
-      value: "clas3",
+      label: "All",
+      value: "",
     },
     {
       label: "Class 4",
-      value: "clas4",
+      value: "4th",
+    },
+    {
+      label: "Class 5",
+      value: "5th",
+    },
+    {
+      label: "Class 6",
+      value: "6th",
+    },
+    {
+      label: "Class 7",
+      value: "7th",
+    },
+    {
+      label: "Class 8",
+      value: "8th",
     },
   ];
   const dispatch = useDispatch();
@@ -45,11 +54,8 @@ export const HomeTop = () => {
   };
   console.log("heyyyy", cls);
   console.log("oeyyyy", dt);
-  console.log("dgeyyyy", students);
+  console.log("yyyy", students);
 
-  //   useEffect(() => {
-  //     dispatch(getStd());
-  //   }, []);
   return (
     <View style={tw`p-3  mb-5`}>
       <SelectItem list={classList} w={97} setData={handleClass} />

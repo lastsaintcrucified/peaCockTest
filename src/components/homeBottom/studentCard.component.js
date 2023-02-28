@@ -1,8 +1,11 @@
 import React from "react";
 import { Text, View, Image } from "react-native";
+import { useSelector } from "react-redux";
+import { selectDt } from "../../redux/slices/stdSlice";
 import tw from "twrnc";
 
 export const StudentCard = ({ item }) => {
+  const dt = useSelector(selectDt);
   return (
     <View style={tw`p-2 h-40 flex-row`}>
       <View style={tw`basis-1/6`}>
@@ -25,10 +28,16 @@ export const StudentCard = ({ item }) => {
       <View style={tw`basis-1/6 justify-start`}>
         <View
           style={tw`m-2 h-3 w-3 ${
-            item.present ? "bg-green-600" : "bg-red-600"
+            dt == ""
+              ? "bg-slate-300"
+              : item.attendance?.includes(dt)
+              ? "bg-green-600"
+              : "bg-red-600"
           } rounded-full`}
         ></View>
-        {item.present ? (
+        {dt == "" ? (
+          <Text style={tw`text-left`}>N/A</Text>
+        ) : item.attendance?.includes(dt) ? (
           <Text style={tw`text-left`}>Present</Text>
         ) : (
           <Text style={tw`text-left`}>Absent</Text>

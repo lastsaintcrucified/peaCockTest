@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import { collection, getDocs } from "firebase/firestore";
+import { db, getData } from "../../services/handleDataCrud";
 const initialState = {
   cls: "",
   dt: "",
@@ -7,9 +8,7 @@ const initialState = {
   loading: false,
 };
 export const getStd = createAsyncThunk("getStd", async (thunkAPI) => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts").then(
-    (data) => data.json()
-  );
+  const res = await getData().then((data) => data);
   return res;
 });
 
@@ -43,5 +42,6 @@ export const { setCls, setDt } = stdSlice.actions;
 export const selectCls = (state) => state.std.cls;
 export const selectDt = (state) => state.std.dt;
 export const selectStudent = (state) => state.std.students;
+export const selectLoading = (state) => state.std.loading;
 
 export default stdSlice.reducer;

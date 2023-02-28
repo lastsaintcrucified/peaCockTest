@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity, View } from "react-native";
 import { HomeTop } from "../../components/homeTop/homeTop.component";
 import tw from "twrnc";
 import { HomeBottomNavigator } from "../../navigation/homeBottom.navigation";
-
+import { getStd } from "../../redux/slices/stdSlice";
 export const HomeScreen = () => {
   const navigation = useNavigation();
   const [active, setActive] = useState("tst");
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getStd());
+  }, []);
   return (
     <View style={tw`bg-white flex-1`}>
       <HomeTop />
