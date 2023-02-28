@@ -2,10 +2,9 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button, Text, TouchableOpacity } from "react-native";
 
-import tw from "twrnc";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { TotalStudentScreen } from "../screens/home/homeBottom/totalStudents.screen";
-import { StatusScreen } from "../screens/home/homeBottom/status.screen";
+import { FeeCollection } from "../screens/home/feeBottom/feeCollection.screen";
+import { FeeDue } from "../screens/home/feeBottom/feeDue.screen";
+import { FeeConcess } from "../screens/home/feeBottom/feeConcess.screen";
 
 const FeeBottomStack = createNativeStackNavigator();
 
@@ -19,19 +18,19 @@ export const FeeBottomNavigator = () => {
     >
       <FeeBottomStack.Screen
         name="FeeCollection"
-        component={TotalStudentScreen}
+        component={FeeCollection}
         options={{
           headerShown: false,
         }}
       />
       <FeeBottomStack.Screen
         name="FeeDue"
-        component={StatusScreen}
+        component={FeeDue}
         options={{ headerShown: false }}
       />
       <FeeBottomStack.Screen
         name="FeeConcess"
-        component={StatusScreen}
+        component={FeeConcess}
         options={{ headerShown: false }}
       />
     </FeeBottomStack.Navigator>

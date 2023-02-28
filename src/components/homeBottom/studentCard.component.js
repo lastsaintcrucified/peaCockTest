@@ -4,7 +4,7 @@ import tw from "twrnc";
 
 export const StudentCard = ({ item }) => {
   return (
-    <View style={tw`h-40 flex-row`}>
+    <View style={tw`p-2 h-40 flex-row`}>
       <View style={tw`basis-1/6`}>
         <Image src={item.image} style={tw`m-2 h-12 w-12 rounded-full`} />
       </View>
@@ -15,7 +15,7 @@ export const StudentCard = ({ item }) => {
           <Text style={tw`font-semibold text-black`}>{item.admission_id}</Text>
         </Text>
         <Text style={tw`font-semibold text-sm text-slate-400 leading-6`}>
-          Roll no: <Text style={tw`text-bold text-black`}>{item.roll}</Text>
+          Roll no: <Text style={tw`font-bold text-black`}>{item.roll}</Text>
         </Text>
         <Text style={tw`font-semibold text-sm text-slate-400 leading-6`}>
           Father's name:

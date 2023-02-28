@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity, View } from "react-native";
-import { HomeTop } from "../../components/homeTop/homeTop.component";
 import tw from "twrnc";
-import { HomeBottomNavigator } from "../../navigation/homeBottom.navigation";
+import { FeeBottomNavigator } from "../../navigation/feeBottom.navigation";
 import { SelectItem } from "../../components/selectItem.component";
 
 export const FeeScreen = () => {
@@ -29,7 +28,7 @@ export const FeeScreen = () => {
   ];
   return (
     <View style={tw`bg-white flex-1`}>
-      <View style={tw`p-3 mb-5`}>
+      <View style={tw`p-3`}>
         <SelectItem list={genderList} />
       </View>
       <View style={tw`flex flex-row`}>
@@ -91,7 +90,7 @@ export const FeeScreen = () => {
           </Text>
         </TouchableOpacity>
       </View>
-      <HomeBottomNavigator />
+      <FeeBottomNavigator />
     </View>
   );
 };

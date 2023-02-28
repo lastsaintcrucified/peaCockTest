@@ -8,6 +8,7 @@ import { StudentCard } from "./studentCard.component";
 const data = [
   {
     name: "John Doe",
+    id: 1,
     admission_id: "233",
     roll: "44",
     father: "Alex Doe",
@@ -16,6 +17,7 @@ const data = [
   },
   {
     name: "John Doe",
+    id: 2,
     admission_id: "233",
     roll: "44",
     father: "Alex Doe",
@@ -23,6 +25,7 @@ const data = [
       "https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg",
   },
   {
+    id: 3,
     name: "John Doe",
     admission_id: "233",
     roll: "44",
@@ -31,6 +34,7 @@ const data = [
       "https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg",
   },
   {
+    id: 4,
     name: "John Doe",
     admission_id: "233",
     roll: "44",
