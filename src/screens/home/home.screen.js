@@ -7,7 +7,7 @@ import { HomeBottomNavigator } from "../../navigation/homeBottom.navigation";
 
 export const HomeScreen = () => {
   const navigation = useNavigation();
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("tst");
 
   return (
     <View style={tw`bg-white flex-1`}>

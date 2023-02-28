@@ -1,29 +1,46 @@
 import React from "react";
-import { Text, View, FlatList } from "react-native";
+import { Text, View, FlatList, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 import tw from "twrnc";
 import { StudentCard } from "./studentCard.component";
 
 const data = [
   {
-    id: "Uber-X-123",
-    title: "UberX",
-    multiplier: 1,
-    image: "https://links.papareact.com/3pn",
+    name: "John Doe",
+    admission_id: "233",
+    roll: "44",
+    father: "Alex Doe",
+    image:
+      "https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg",
   },
   {
-    id: "Uber-XL-456",
-    title: "Uber XL",
-    multiplier: 1.2,
-    image: "https://links.papareact.com/5w8",
+    name: "John Doe",
+    admission_id: "233",
+    roll: "44",
+    father: "Alex Doe",
+    image:
+      "https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg",
   },
   {
-    id: "Uber-XL-789",
-    title: "Uber LUX",
-    multiplier: 1.75,
-    image: "https://links.papareact.com/7pf",
+    name: "John Doe",
+    admission_id: "233",
+    roll: "44",
+    father: "Alex Doe",
+    image:
+      "https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg",
+  },
+  {
+    name: "John Doe",
+    admission_id: "233",
+    roll: "44",
+    father: "Alex Doe",
+    image:
+      "https://img.freepik.com/free-vector/cute-astronaut-dance-cartoon-vector-icon-illustration-technology-science-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3851.jpg",
   },
 ];
 export const Part2Bottom = () => {
+  const navigation = useNavigation();
   return (
     <View style={tw`bg-white`}>
       <FlatList
@@ -33,7 +50,15 @@ export const Part2Bottom = () => {
         ItemSeparatorComponent={() => (
           <View style={[tw`bg-gray-200`, { height: 0.5 }]} />
         )}
-        renderItem={({ item }) => <StudentCard textTmp={item.title} />}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Fee");
+            }}
+          >
+            <StudentCard item={item} />
+          </TouchableOpacity>
+        )}
       />
     </View>
   );

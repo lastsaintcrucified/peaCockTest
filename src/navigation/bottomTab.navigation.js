@@ -25,8 +25,8 @@ const ScreenOptions = ({ route }) => {
     headerShown: false,
     tabBarStyle: {
       backgroundColor: "#17362E",
-      height: 65,
-      paddingBottom: 13,
+      height: 60,
+      paddingBottom: 5,
       paddingTop: 5,
     },
   };
