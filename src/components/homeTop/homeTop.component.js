@@ -52,9 +52,9 @@ export const HomeTop = () => {
   handleDate = (data) => {
     dispatch(setDt(data));
   };
-  console.log("heyyyy", cls);
-  console.log("oeyyyy", dt);
-  console.log("yyyy", students);
+  //   console.log("heyyyy", cls);
+  //   console.log("oeyyyy", dt);
+  //   console.log("yyyy", students);
 
   return (
     <View style={tw`p-3  mb-5`}>
